@@ -1,7 +1,9 @@
-Feature: Google Sign In
+Feature: User Sign-In with Email and OTP Authentication
 
-  Scenario: Sign in with Google
+  Scenario: Successful sign-in using email and OTP
     Given I am on the homepage
     When I click on the "Sign in" button
-    And I select "Continue with Google"
-    Then I should see the Google sign-in page
+    And I enter my email and continue
+    Then I wait for the OTP input field
+    When I manually input the OTP and wait for authentication
+    Then I should be redirected to the homepage and see 'Welcome Back' text and the avatar image
